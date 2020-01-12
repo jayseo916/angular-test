@@ -11,8 +11,10 @@ import { CartService } from "../cart.service"
 export class ProductDetailsComponent implements OnInit {
   product;
 
-  constructor(private route: ActivatedRoute,
-  private cartService: CartService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params =>{
@@ -20,4 +22,8 @@ export class ProductDetailsComponent implements OnInit {
     })
   }
 
+  addToCart(product){
+    window.alert('add to cart!')
+    this.cartService.addToCart(product)
+  }
 }
